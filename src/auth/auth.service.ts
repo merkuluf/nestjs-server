@@ -19,7 +19,7 @@ export class AuthService {
   async signin(signinDto: SigninDto) {
     const { password, name } = signinDto;
     console.log(signinDto, '<');
-    const existingUser = await db.select().from(users);
+    const existingUser = await db.select().from(users).where('nam');
 
     console.log(existingUser);
   }
